@@ -57,4 +57,20 @@ class Company {
             return total + employee.calculateAnnualSalary();
             }, 0); // calculate total payroll
     }; // Created a payroll system
-} 
+
+    //Task 5 Implemented Promtion System
+    PromoteToManager(employee, teamSize){
+        const index = this.employees.indexOf(employee);
+        if (index !== -1)
+            this.employees[index] = new Manager(employee.name, employee.id, employee.department, employee.salary, employee.tamesize);
+    } 
+};
+const Company = new Company("Tech Corp");
+Company.addEmployee(emp1); // adds the employee
+Company.addEmployee(mgr1); // adds the manager
+Company.listEmployee();
+
+console.log(Company.calculateTotalPayroll());
+
+Company.PromoteToManager(emp1, 3);
+Company.listEmployee();
