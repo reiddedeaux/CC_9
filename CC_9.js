@@ -51,4 +51,10 @@ class Company {
     listEmployee(){ // List the employees
         this.employees.forEach(employee => console.log(employee.getDetails()));
     }
-};
+    //Task 4 Implemented Payroll System
+    calculateTotalPayroll(){
+        return this.employees.reduce((total, employee) => {
+            return total + employee.calculateAnnualSalary();
+            }, 0); // calculate total payroll
+    }; // Created a payroll system
+} 
